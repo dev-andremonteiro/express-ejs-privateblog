@@ -1,0 +1,19 @@
+<header class="main-header">
+  <nav class="main-header__nav">
+    <a class="title" href="/">PrivateBlog</a>
+
+    <div class="login">
+      <% if (isLogged) { %>
+      <div style="margin-right: 10px;">
+        <p>Logged in as</p>
+        <p class="bold-text"><%=isLogged.user.user %></p>
+      </div>
+      <form action="/logout" method="POST">
+        <button type="submit">LOGOUT</button>
+      </form>
+      <% } else { %>
+      <a href="/login">LOGIN</a>
+      <% } %>
+    </div>
+  </nav>
+</header>

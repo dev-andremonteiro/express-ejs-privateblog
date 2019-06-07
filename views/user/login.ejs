@@ -1,0 +1,24 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main class="login">
+        <div class="box auth-container">
+            <h2>Welcome back!</h2>
+            <form class="auth-container__form" action="/login" method="POST">
+
+                <input type="text" name="user" id="user" class="input first-input" placeholder="Username">
+                <input type="password" name="pass" id="pass" class="input" placeholder="Password">
+
+                <% if (loginError) { %>
+                    <p>Sorry, check your username or password and try again.</p>
+                <% }%>
+                <a href="/signup" >Create a new account</a>
+                
+                <button class="btn login-btn" type="submit">LOG IN</button>
+            </form>
+        </div>
+    </main>
+<%- include('../includes/end.ejs') %>

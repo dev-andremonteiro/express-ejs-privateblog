@@ -1,0 +1,110 @@
+.container {
+  min-height: 80vh;
+  width: 80vw;
+  margin: auto;
+  padding: 1.2rem;
+  background-color: #f6f6f6;
+}
+
+.container h1 {
+  font-weight: 200;
+}
+
+.container a.newpost,
+.container a.adminusers {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  padding: 0.3rem 1rem;
+  background-color: #ccc;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.container a.newpost {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: green;
+  font-weight: 600;
+
+  transition: all 0.3s;
+}
+
+.container a.newpost:hover {
+  border: 1px solid rgb(91, 255, 99);
+  background-color: rgb(188, 255, 191);
+}
+
+.container .grid {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(12, 1fr);
+
+  margin: 4rem 0;
+}
+
+.container .post {
+  grid-column: span 6;
+
+  border-radius: 5px;
+  margin: 0 4rem;
+
+  background-color: var(--white);
+}
+
+.post__admin-actions {
+  margin-bottom: 2rem;
+  min-width: 80px;
+  padding: 0.5rem 0.4rem;
+}
+
+.post__admin-actions a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  margin: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.post__admin-actions a:hover {
+  background-color: var(--gray);
+}
+
+.post__user-info {
+  padding: 0.5rem 0.4rem;
+}
+
+.post__user-info .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--gray);
+  margin: 0 10px;
+}
+
+.post__user-info h4 {
+  font-weight: 200;
+}
+
+.post__content {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  padding: 1.5rem 1rem;
+  transition: all 0.3s;
+}
+
+.post__content:hover {
+  background-color: #ccc;
+}
+
+.post__content h3 {
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin: 1rem 0;
+}

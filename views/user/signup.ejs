@@ -1,0 +1,25 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/switch.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <div class="box auth-container">
+            <h2>Create your new account</h2>
+            <form class="auth-container__form" action="/signup" method="POST">
+        
+                <input type="text" name="user" id="user" class="input" placeholder="Username">
+                <input type="password" name="pass" id="pass" class="input" placeholder="Password">
+                <input type="password" name="repeat" id="repeat" class="input" placeholder="Repeat Password">
+                <h4>Admin User</h4>
+                <label class="switch"><input type="checkbox" name="isAdmin" id="isAdmin" class="checkbox"><span class="slider round"></span></label>
+                <% if (signupError) { %>
+                <p><%=errorMessage %></p>
+                <% }%>
+                <button class="btn signup-btn" type="submit">SIGN UP</button>
+            </form>
+        </div>
+    </main>
+<%- include('../includes/end.ejs') %>

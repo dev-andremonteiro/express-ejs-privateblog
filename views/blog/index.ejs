@@ -1,0 +1,46 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/posts.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <div class="flex column">
+            <div class="container">
+                <h1>Blog Posts</h1>
+                <div class="row right">
+                        <form action="/blog/new" method="POST">
+                            <button class="newpost" type="submit">New Post</button>
+                          </form>
+                    <a class="adminusers">Manage Users</a>
+                </div>
+                <% if (posts.length > 0) { %>
+
+                <div class="grid">
+                    <% for (let singlePost of posts) { %>
+                    <div class="post">
+                        <div class="post__admin-actions row left">
+                            <a><i class="material-icons" style="font-size:24px;color:#444">create</i></a>
+                            <a><i class="material-icons" style="font-size:24px;color:#444">delete</i></a>
+                        </div>
+
+                        <div class="post__user-info row left">
+                            <div class="avatar"></div>
+                            <h4><%=singlePost.user%></h4>
+                        </div>
+
+                        <div class="post__content column start">
+                            <h3><%=singlePost.title%></h3>
+                            <p><%=singlePost.desc%></p>
+                        </div>
+                    </div>
+                    <%}%>
+                </div>
+
+                <%}%>
+            </div>
+        </div>
+    </main>
+<%- include('../includes/end.ejs') %>
